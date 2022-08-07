@@ -7,11 +7,15 @@ const ingredients = [
   'Condiments',
 ];
 
-const ingredientsList = document.querySelector('#ingredients')
+const ingredientsList = document.querySelector('#ingredients');
+const liEl = document.createElement("li");
+  liEl.classList.add("item")
 
-const itemMurkup = ingredients.map((ingredient) => `<li class = "item">${ingredient}</li>`) .join("");
+const itemMurkup = ingredients.map((ingredient) => document.createElement("li").textContent = `${ingredient}`)
 
-console.log(itemMurkup)
+console.log(...itemMurkup)
+console.log(liEl)
+ingredientsList.append(liEl)
 
-ingredientsList.insertAdjacentHTML("afterbegin", itemMurkup) 
+liEl.append(...itemMurkup)
 console.log(ingredientsList)

@@ -9,8 +9,9 @@ console.log(bodyEl)
 const colorValue = document.querySelector(".color")
   
 colorBtn.addEventListener("click", () => {
-  bodyEl.style.backgroundColor = `${getRandomHexColor()}`
+  const getRandomColor = getRandomHexColor()
+  bodyEl.style.backgroundColor = `${getRandomColor}`
   console.log(bodyEl)
   
-  colorValue.textContent = bodyEl.style.backgroundColor
+  colorValue.textContent = getRandomColor
 })
