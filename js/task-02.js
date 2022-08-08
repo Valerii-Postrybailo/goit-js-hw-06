@@ -8,14 +8,13 @@ const ingredients = [
 ];
 
 const ingredientsList = document.querySelector('#ingredients');
-const liEl = document.createElement("li");
+
+const itemMurkup = ingredients.map((ingredient) => {
+  const liEl = document.createElement("li");
   liEl.classList.add("item")
+  liEl.textContent = ingredient
+  return liEl
+})
 
-const itemMurkup = ingredients.map((ingredient) => document.createElement("li").textContent = `${ingredient}`)
-
-console.log(...itemMurkup)
-console.log(liEl)
-ingredientsList.append(liEl)
-
-liEl.append(...itemMurkup)
+ingredientsList.append(...itemMurkup)
 console.log(ingredientsList)
